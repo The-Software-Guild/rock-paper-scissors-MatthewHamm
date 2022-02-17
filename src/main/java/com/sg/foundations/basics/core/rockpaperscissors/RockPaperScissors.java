@@ -23,6 +23,7 @@ public class RockPaperScissors {
         int wins=0;
         int losses=0;
         int draws=0;
+        String replay;
         
         System.out.println("How many round do you want to play?(1-10)");
         noRounds=Integer.parseInt(myScanner.nextLine());
@@ -67,7 +68,21 @@ public class RockPaperScissors {
                     losses++;
                 }
             }
+            if(wins>losses){
+                System.out.println("Player won the most rounds! The player had Wins: "+wins+" Losses: "+losses+" Draw: "+draws);
+            }
+            else if(losses>wins){
+                System.out.println("Computer won the most rounds! The player had Wins: "+wins+" Losses: "+losses+" Draw: "+draws);
+            }
+            else{
+                System.out.println("It was a draw! The player had Wins: "+wins+" Losses: "+losses+" Draw: "+draws);
+            }
             
+            System.out.println("Do you want to play again? ");
+            replay=myScanner.nextLine();
+            if(replay.equalsIgnoreCase("Yes")){
+                main(args);
+            }
         }
         
     }
