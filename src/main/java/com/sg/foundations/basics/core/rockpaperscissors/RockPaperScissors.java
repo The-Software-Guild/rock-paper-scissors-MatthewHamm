@@ -13,7 +13,7 @@ import java.util.Scanner;
  */
 public class RockPaperScissors {
     public static void main(String[] args) {
-        //Variable declartions
+        //Variable declarations
         Scanner myScanner=new Scanner(System.in);
         
         String playerChoice;
@@ -34,7 +34,7 @@ public class RockPaperScissors {
         
         //Ends program if the inputed value is out of range
         if(noRounds<1 || noRounds>10){
-            System.out.println("This number isn't between 1 and 10");
+            System.err.println("This number isn't between 1 and 10");
         }
         else{
             //run game loop while the current round is less than the number of round inputted by the user
@@ -42,26 +42,26 @@ public class RockPaperScissors {
                 //increments the current round
                 currRound++;
                 //Asks the user for rock paper or scissors
-                System.err.println("Rock, paper or scissors");
+                System.out.println("Rock, paper or scissors");
                 playerChoice=myScanner.nextLine();
                 //generate the computers choice
                 computerChoice=generateComputerChoice();
                 
                 //if the choices are the same it's a draw
                 if(playerChoice.equalsIgnoreCase(computerChoice)){
-                    System.err.println("Draw! Player choice "+ playerChoice+" Computer choice "+computerChoice);
+                    System.out.println("Draw! Player choice "+ playerChoice+" Computer choice "+computerChoice);
                     draws++;
                 }
                 //if the player wins
                 else if((playerChoice.equalsIgnoreCase("Rock") && computerChoice.equalsIgnoreCase("Scissors")) ||
                         (playerChoice.equalsIgnoreCase("Scissors") && computerChoice.equalsIgnoreCase("Paper")||(
                         playerChoice.equalsIgnoreCase("Paper") && computerChoice.equalsIgnoreCase("Rock")))){
-                    System.err.println("Player Wins! Player choice "+ playerChoice+" Computer choice "+computerChoice);
+                    System.out.println("Player Wins! Player choice "+ playerChoice+" Computer choice "+computerChoice);
                     wins++;
                 }
                 // if the player doesn't draw or win it loses
                 else{
-                    System.err.println("Computer Wins! Player choice "+ playerChoice+" Computer choice "+computerChoice);
+                    System.out.println("Computer Wins! Player choice "+ playerChoice+" Computer choice "+computerChoice);
                     losses++;
                 }
             }
